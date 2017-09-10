@@ -15,4 +15,8 @@
  */
 
 @import "bootstrap";
-@@import "bootstrap-sprockets";
+@import "bootstrap-sprockets";
+
+#main-nav {
+  margin-top: 50px;
+}
