@@ -50,7 +50,12 @@
         <div class="row">
           <div class="col-sm-2">
             <% if user_signed_in? %>
-              <h5>Bills Bars</h5>
+              <h5>Huddles</h5>
+              <ul>
+                <% current_user.barrooms.each do |barroom| %>
+                  <li><%= link_to barroom.name, "#" %></li>
+                <% end %>
+              </ul>
             <% end %>
           </div>
           <div class="col-sm-10">
