@@ -1,1 +1,25 @@
 <h1>Barrooms</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @barrooms.each do |barroom| %>
+      <tr>
+        <td><%= barroom.name %></td>
+        <td><%= link_to 'Show', barroom %></td>
+        <td><%= link_to 'Edit', edit_barroom_path(barroom) %></td>
+        <td><%= link_to 'Destroy', barroom, method: :delete, data: { confirm: 'Are you certain?' }%></td>
+        <td><%= link_to 'Join', barroom_barroom_users_path(barroom), method: :post %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Barroom', new_barroom_path %>
