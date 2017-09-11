@@ -15,6 +15,8 @@
         <td><%= link_to 'Edit', edit_barroom_path(barroom) %></td>
         <td><%= link_to 'Destroy', barroom, method: :delete, data: { confirm: 'Are you certain?' }%></td>
         <td><%= link_to 'Join', barroom_barroom_users_path(barroom), method: :post %></td>
+        <td><%= link_to 'Leave', barroom_barroom_users_path(barroom), method: :delete %></td>
+
       </tr>
     <% end %>
   </tbody>
