@@ -1,4 +1,7 @@
 class BarroomsController < ApplicationController
+  def index
+    @barrooms = Barroom.all
+  end
   def show
     @barroom = Barroom.find(params[:id])
   end
