@@ -1,1 +1,22 @@
 <h1>Bar Name</h1> <%= @barroom.name %>
+
+<div data-behavior='messages'>
+  <% @messages.each do |message| %>
+    <div>
+      <strong><%= message.user.username %>:</strong> <%= message.body %>
+    </div>
+  <% end %>
+</div>
+
+<%= form_for [@barroom, Message.new] do |f| %>
+  <%= f.text_area :body, rows: 1, class: "form-control", id: "new-message-textarea", autofocus: true %>
+<% end %>
+
+<script type="text/javascript">
+$('#new-message-textarea').keypress(function(e){
+      if(e.which == 13){
+           $(this).closest('form').submit();
+       }
+    });
+
+</script>

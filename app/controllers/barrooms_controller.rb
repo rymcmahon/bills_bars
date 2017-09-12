@@ -4,6 +4,7 @@ class BarroomsController < ApplicationController
   end
   def show
     @barroom = Barroom.find(params[:id])
+    @messages = @barroom.messages.order(created_at: :desc).limit(100).reverse
   end
   def new
     @barroom = Barroom.new
