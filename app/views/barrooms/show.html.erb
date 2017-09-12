@@ -1,1 +1,13 @@
 <h1>Bar Name</h1> <%= @barroom.name %>
+
+<div data-behavior='messages'>
+  <% 1.upto(1000) do %>
+    <div>
+      <strong>Hello World</strong>
+    </div>
+  <% end %>
+</div>
+
+<%= form_for [@barroom, Message.new] do |f| %>
+  <%= f.text_area :body, rows: 1, class: "form-control", autofocus: true %>
+<% end %>
