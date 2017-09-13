@@ -8,15 +8,6 @@
   <% end %>
 </div>
 
-<%= form_for [@barroom, Message.new] do |f| %>
-  <%= f.text_area :body, rows: 1, class: "form-control", id: "new-message-textarea", autofocus: true %>
+<%= form_for [@barroom, Message.new], remote: true do |f| %>
+  <%= f.text_area :body, rows: 1, class: "form-control", autofocus: true %>
 <% end %>
-
-<script type="text/javascript">
-$('#new-message-textarea').keypress(function(e){
-      if(e.which == 13){
-           $(this).closest('form').submit();
-       }
-    });
-
-</script>
