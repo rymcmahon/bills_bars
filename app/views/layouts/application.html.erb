@@ -53,7 +53,7 @@
               <h5>Huddles</h5>
               <ul>
                 <% current_user.barrooms.each do |barroom| %>
-                  <li><%= link_to barroom.name, barroom %></li>
+                  <li><%= link_to barroom.name, barroom, data: {behavior: "barroom-link", barroom_id: barroom.id} %></li>
                 <% end %>
               </ul>
             <% end %>
