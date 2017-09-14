@@ -6,5 +6,8 @@ App.barrooms = App.cable.subscriptions.create "BarroomsChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    console.log.data
-    # Called when there's incoming data on the websocket for this channel
+    active_barroom = $("[data-behavior='messages'][data-barroom-id='#{data.barroom_id}']")
+    if active_barroom.length > 0
+      active_barroom.append(data.message)
+    else
+      $("[data-behavior='barroom-link'][data-barroom-id]='#{data.barroom_id}'").css("font-weight", "bold")

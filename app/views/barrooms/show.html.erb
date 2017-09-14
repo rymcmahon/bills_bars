@@ -1,6 +1,6 @@
 <h1>Bar Name</h1> <%= @barroom.name %>
 
-<div data-behavior='messages'>
+<div data-behavior='messages' data-barroom-id='<%= @barroom.id %>'>
   <% @messages.each do |message| %>
     <%= render message %>
   <% end %>

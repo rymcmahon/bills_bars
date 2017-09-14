@@ -1,7 +1,7 @@
 class BarroomsChannel < ApplicationCable::Channel
   def subscribed
     current_user.barrooms.each do |barroom|
-      stream_from "barroom:#{barroom.id}"
+      stream_from "barrooms:#{barroom.id}"
     end
   end
 
