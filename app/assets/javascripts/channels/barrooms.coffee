@@ -10,4 +10,4 @@ App.barrooms = App.cable.subscriptions.create "BarroomsChannel",
     if active_barroom.length > 0
       active_barroom.append(data.message)
     else
-      $("[data-behavior='barroom-link'][data-barroom-id]='#{data.barroom_id}'").css("font-weight", "bold")
+      $("[data-behavior='barroom-link'][data-barroom-id='#{data.barroom_id}']").css("font-weight", "bold")
