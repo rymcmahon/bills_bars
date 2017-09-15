@@ -11,3 +11,5 @@ $("#new_message").on "submit", (e) ->
     body        = $("#message_body")
 
     App.barrooms.send_message(barroom_id, body.val())
+
+    body.val("")
