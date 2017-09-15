@@ -11,3 +11,6 @@ App.barrooms = App.cable.subscriptions.create "BarroomsChannel",
       active_barroom.append(data.message)
     else
       $("[data-behavior='barroom-link'][data-barroom-id='#{data.barroom_id}']").css("font-weight", "bold")
+
+      send_message: (barroom_id, message) ->
+        @perform "send_message", {barroom_id: barroom_id, body: message}

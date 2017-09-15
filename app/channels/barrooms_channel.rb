@@ -8,4 +8,10 @@ class BarroomsChannel < ApplicationCable::Channel
   def unsubscribed
     stop_all_streams
   end
+
+  def send_message(data)
+    @barroom = Barroom.find(data["barroom_id"])
+    message = @barroom.messages.create(body: data["body"], user: current_user)
+    MessageRelayJob.perform_later(message)
+  end
 end
