@@ -8,7 +8,11 @@ App.barrooms = App.cable.subscriptions.create "BarroomsChannel",
   received: (data) ->
     active_barroom = $("[data-behavior='messages'][data-barroom-id='#{data.barroom_id}']")
     if active_barroom.length > 0
-      active_barroom.append(data.message)
+      active_barroom.append("<div><strong>#{data.username}:</strong> #{data.body}</div>")
+
+      if document.hidden && Notification.permission == "granted"
+        new Notification(data.username, {body: data.body})
+
     else
       $("[data-behavior='barroom-link'][data-barroom-id='#{data.barroom_id}']").css("font-weight", "bold")
 
