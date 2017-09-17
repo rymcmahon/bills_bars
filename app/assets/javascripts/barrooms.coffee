@@ -1,4 +1,13 @@
+handleVisibilityChange = ->
+  $strike = $(".strike")
+  if $strike.length > 0
+    barroom_id = $("[data-behavior='messages']").data("barroom-id")
+    App.last_read.update(barroom_id)
+    $strike.remove()
+
 $(document).on "turbolinks:load", ->
+  $(document).on "click", handleVisibilityChange
+
   $("#new_message").on "keypress", (e) ->
     if e && e.keyCode == 13
       e.preventDefault()
