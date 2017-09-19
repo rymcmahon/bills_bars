@@ -12,12 +12,13 @@ App.barrooms = App.cable.subscriptions.create "BarroomsChannel",
       if document.hidden
         if $(".strike").length == 0
           active_barroom.append("<div class='strike'><span>Unread Meassages</span></div>")
+
         if Notification.permission == "granted"
           new Notification(data.username, {body: data.body})
 
       else
         App.last_read.update(data.barroom_id)
-        
+
       active_barroom.append("<div><strong>#{data.username}:</strong> #{data.body}</div>")
 
 
