@@ -3,7 +3,7 @@
 <% unread_messages = false %>
 <div data-behavior='messages' data-barroom-id='<%= @barroom.id %>'>
   <% @messages.each do |message| %>
-    <% if !unread_messages && @barroom_user.last_read_at < message.created_at %>
+    <% if !unread_messages && !@current_barroom && @barroom_user.last_read_at < message.created_at %>
       <% unread_messages = true %>
       <div class="strike">
         <span>Unread Messages</span>

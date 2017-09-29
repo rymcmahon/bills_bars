@@ -9,6 +9,7 @@ class BarroomsController < ApplicationController
     # @barroom = Barroom.find(params[:id])
     @messages = @barroom.messages.order(created_at: :desc).limit(100).reverse
     @barroom_user = current_user.barroom_users.find_by(barroom_id: @barroom.id)
+    @current_barroom = current_user.barroom_users.where(barroom_id: @barroom.id)
   end
 
   def new
