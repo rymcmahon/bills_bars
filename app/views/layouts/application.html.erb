@@ -52,7 +52,7 @@
             <% if user_signed_in? %>
               <h5>Huddles</h5>
               <ul>
-                <% current_user.barrooms.each do |barroom| %>
+                <% current_user.barrooms.public_channels.each do |barroom| %>
                   <li><%= link_to barroom.name, barroom, data: {behavior: "barroom-link", barroom_id: barroom.id} %></li>
                 <% end %>
               </ul>
