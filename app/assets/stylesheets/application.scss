@@ -54,3 +54,20 @@
   left: 100%;
   margin-left: 15px;
 }
+
+#static-sidebar {
+  width: 60px;
+  padding: 0;
+}
+
+#static-sidebar ul {
+  padding-left: 0;
+}
+
+#static-sidebar li {
+  list-style: none;
+}
+
+#static-sidebar .fa {
+  font-size: 40px;
+}
