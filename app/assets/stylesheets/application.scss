@@ -19,6 +19,12 @@
 @import 'navbar-fixed-side';
 @import "font-awesome";
 
+/*
+Palette
+Red: #C1404C
+Blue: #324C7E
+Off-White: #F5F3F4
+*/
 #main-nav {
   margin-top: 50px;
 }
@@ -57,7 +63,9 @@
 
 #static-sidebar {
   width: 60px;
-  padding: 0;
+  padding: 10px 0 0 0;
+  background-color: #324C7E;
+  min-height: 2000px;
 }
 
 #static-sidebar ul {
@@ -69,5 +77,26 @@
 }
 
 #static-sidebar .fa {
-  font-size: 40px;
+  font-size: 30px;
+  padding: 10px;
+  color: #fff;
+}
+
+#settings-nav {
+  background-color: #F5F3F4;
+  border-color: #F5F3F4;
+}
+
+#messaging-nav .navbar-nav > li > a:hover {
+  background-color: #e6e0e3;
+}
+
+#messaging-nav .navbar-nav > li > a {
+  border-bottom: 1px solid #e6e0e3;
+}
+
+@media (max-width:767px) {
+  #static-sidebar {
+    display: none;
+  }
 }
