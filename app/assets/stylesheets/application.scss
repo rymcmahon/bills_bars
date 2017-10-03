@@ -24,6 +24,7 @@ Palette
 Red: #C1404C
 Blue: #324C7E
 Off-White: #F5F3F4
+Midnight Navy: #3D4A58
 */
 #main-nav {
   margin-top: 50px;
@@ -91,10 +92,20 @@ Off-White: #F5F3F4
 
 #messaging-nav .navbar-nav > li > a:hover {
   background-color: #e6e0e3;
+  color: #3D4A58;
 }
 
 #messaging-nav .navbar-nav > li > a {
-  border-bottom: 1px solid #e6e0e3;
+  border-bottom: none;
+  padding-top: 5px;
+  padding-bottom: 0;
+}
+
+.nav-headings {
+  padding: 0 15px;
+  color: #3D4A58;
+  margin-top: 20px;
+  margin-bottom: 0px;
 }
 
 @media (max-width:767px) {
