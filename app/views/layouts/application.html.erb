@@ -14,7 +14,7 @@
           <ul data-spy="affix" data-offset-top="0" data-offset-bottom="0">
             <% if user_signed_in? %>
               <%= link_to edit_user_registration_path do %>
-                <li><i class="fa fa-cogs" aria-hidden="true"></i></li>
+                <li><i class="fa fa-cog" aria-hidden="true"></i></li>
               <% end %>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <li><i class="fa fa-sign-out" aria-hidden="true"></i></li>
