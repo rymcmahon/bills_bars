@@ -12,13 +12,17 @@
       <div class="row">
         <div class="col-sm-1 col-lg-1" id="static-sidebar">
           <ul id="affix-settings-nav">
+          <li><i class="fa fa-newspaper-o" aria-hidden="true"></i></li>
+            <p class="setting-nav-text">News</p>
             <% if user_signed_in? %>
               <%= link_to edit_user_registration_path do %>
-                <li><i class="fa fa-cog" aria-hidden="true"></i></li>
+                <li><i class="fa fa-user" aria-hidden="true"></i></li>
               <% end %>
+              <p class="setting-nav-text">Profile</p>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <li><i class="fa fa-sign-out" aria-hidden="true"></i></li>
               <% end %>
+              <p class="setting-nav-text">Log-out</p>
             <% end %>
           </ul>
         </div>
@@ -37,21 +41,22 @@
               <div class="collapse navbar-collapse" id="messaging-nav">
                 <ul class="nav navbar-nav">
                   <% if user_signed_in? %>
-                  <li>
-                    <!-- <h5 class="nav-headings"> Hi, <%= current_user.username %>!</h5> -->
-                  </li>
-                  <h5 class="nav-headings">Huddles</h5>
-                  <% current_user.barrooms.public_channels.each do |barroom| %>
-                    <li><%= link_to barroom.name, barroom, data: {behavior: "barroom-link", barroom_id: barroom.id} %></li>
+                    <li>
+                      <!-- <h5 class="nav-headings"> Hi, <%= current_user.username %>!</h5> -->
+                    </li>
+                    <h5 class="nav-headings">Huddles</h5>
+                    <% current_user.barrooms.public_channels.each do |barroom| %>
+                      <li><%= link_to barroom.name, barroom, data: {behavior: "barroom-link", barroom_id: barroom.id} %></li>
+                    <% end %>
+                    <hr>
+                    <h5 class="nav-headings">Direct Message</h5>
+                    <% (User.all - [current_user]).each do |user| %>
+                      <li><%= link_to user.username, direct_message_path(user.id), data: {behavior: "barroom-link", barroom_id: Barroom.direct_message_for_users([current_user, user]).id } %></li>
+                    <% end %>
+                  <% else %>
+                    <li><%= link_to "Sign Up", new_user_registration_path %></li>
+                    <li><%= link_to "Login", new_user_session_path %></li>
                   <% end %>
-                  <h5 class="nav-headings">Direct Message</h5>
-                  <% (User.all - [current_user]).each do |user| %>
-                    <li><%= link_to user.username, direct_message_path(user.id), data: {behavior: "barroom-link", barroom_id: Barroom.direct_message_for_users([current_user, user]).id } %></li>
-                  <% end %>
-                <% else %>
-                  <li><%= link_to "Sign Up", new_user_registration_path %></li>
-                  <li><%= link_to "Login", new_user_session_path %></li>
-                <% end %>
                 </ul>
               </div>
             </div>

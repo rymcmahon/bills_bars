@@ -80,14 +80,28 @@ Midnight Navy: #3D4A58
 }
 
 #static-sidebar .fa {
-  font-size: 30px;
-  padding: 10px;
+  font-size: 25px;
+  padding: 10px 0 0 0;
   color: #fff;
+}
+
+.setting-nav-text {
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
 }
 
 #settings-nav {
   background-color: #F5F3F4;
   border-color: #F5F3F4;
+}
+
+#messaging-nav {
+  border-top: 1px solid #dfdfdf;
+}
+
+#messaging-nav hr {
+  border-top: 1px solid #dfdfdf;
 }
 
 #messaging-nav .navbar-nav > li > a:hover {
