@@ -16,7 +16,16 @@
 
 @import "bootstrap";
 @import "bootstrap-sprockets";
+@import 'navbar-fixed-side';
+@import "font-awesome";
 
+/*
+Palette
+Red: #C1404C
+Blue: #324C7E
+Off-White: #F5F3F4
+Midnight Navy: #3D4A58
+*/
 #main-nav {
   margin-top: 50px;
 }
@@ -51,4 +60,70 @@
 .strike > span:after {
   left: 100%;
   margin-left: 15px;
+}
+
+#static-sidebar {
+  width: 60px;
+  padding: 10px 0 0 0;
+  background-color: #324C7E;
+  min-height: 2000px;
+}
+
+#static-sidebar ul {
+  padding-left: 0;
+}
+
+#static-sidebar li {
+  list-style: none;
+  width: 60px;
+  text-align: center;
+}
+
+#static-sidebar .fa {
+  font-size: 25px;
+  padding: 10px 0 0 0;
+  color: #fff;
+}
+
+.setting-nav-text {
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+}
+
+#settings-nav {
+  background-color: #F5F3F4;
+  border-color: #F5F3F4;
+}
+
+#messaging-nav {
+  border-top: 1px solid #dfdfdf;
+}
+
+#messaging-nav hr {
+  border-top: 1px solid #dfdfdf;
+}
+
+#messaging-nav .navbar-nav > li > a:hover {
+  background-color: #e6e0e3;
+  color: #3D4A58;
+}
+
+#messaging-nav .navbar-nav > li > a {
+  border-bottom: none;
+  padding-top: 5px;
+  padding-bottom: 0;
+}
+
+.nav-headings {
+  padding: 0 15px;
+  color: #3D4A58;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+@media (max-width:767px) {
+  #static-sidebar {
+    display: none;
+  }
 }

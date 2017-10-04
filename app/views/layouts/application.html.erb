@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
   <head>
     <title>BillsBars</title>
@@ -9,78 +9,73 @@
   </head>
   <body>
     <div class="container-fluid">
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <%= link_to root_path, class: "navbar-brand" do %>
-              Chat
-            <% end %>
-          </div>
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <% if user_signed_in? %>
-                <%= yield :right_nav %>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.username %> <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><%= link_to "Settings", edit_user_registration_path %></li>
-                    <li role="separator" class="divider"></li>
-                    <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-                  </ul>
-                </li>
-              <% else %>
-                <li><%= link_to "Sign Up", new_user_registration_path %></li>
-                <li><%= link_to "Login", new_user_session_path %></li>
-              <% end %>
-            </ul>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-      </nav>
-      <div class="fluid-container" id="main-nav">
-        <div class="row">
-          <div class="col-sm-2" style="position: fixed; top: 70px; left: 0;">
+      <div class="row">
+        <div class="col-sm-1 col-lg-1" id="static-sidebar">
+          <ul id="affix-settings-nav">
+          <li><i class="fa fa-newspaper-o" aria-hidden="true"></i></li>
+            <p class="setting-nav-text">News</p>
             <% if user_signed_in? %>
-              <h5>Huddles</h5>
-              <ul>
-                <% current_user.barrooms.public_channels.each do |barroom| %>
-                  <li><%= link_to barroom.name, barroom, data: {behavior: "barroom-link", barroom_id: barroom.id} %></li>
-                <% end %>
-              </ul>
-              <h5>Users</h5>
-              <ul>
-                <% (User.all - [current_user]).each do |user| %>
-                  <li><%= link_to user.username, direct_message_path(user.id), data: {behavior: "barroom-link", barroom_id: Barroom.direct_message_for_users([current_user, user]).id } %></li>
-                <% end %>
-              </ul>
+              <%= link_to edit_user_registration_path do %>
+                <li><i class="fa fa-user" aria-hidden="true"></i></li>
+              <% end %>
+              <p class="setting-nav-text">Profile</p>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <li><i class="fa fa-sign-out" aria-hidden="true"></i></li>
+              <% end %>
+              <p class="setting-nav-text">Log-out</p>
             <% end %>
-          </div>
-          <div class="col-sm-10 col-sm-offset-2">
-            <% if notice %>
-            <div class="alert alert-dismissible alert-success">
-              <button type="button" class="close" data-dismiss="alert">×</button>
-              <h4><%= notice %></h4>
+          </ul>
+        </div>
+        <div class="col-sm-3 col-lg-2">
+          <nav class="navbar navbar-default navbar-fixed-side" id="settings-nav">
+            <div class="container">
+              <div class="navbar-header">
+                <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./">Bills Shout</a>
+              </div>
+              <div class="collapse navbar-collapse" id="messaging-nav">
+                <ul class="nav navbar-nav">
+                  <% if user_signed_in? %>
+                    <li>
+                      <!-- <h5 class="nav-headings"> Hi, <%= current_user.username %>!</h5> -->
+                    </li>
+                    <h5 class="nav-headings">Huddles</h5>
+                    <% current_user.barrooms.public_channels.each do |barroom| %>
+                      <li><%= link_to barroom.name, barroom, data: {behavior: "barroom-link", barroom_id: barroom.id} %></li>
+                    <% end %>
+                    <hr>
+                    <h5 class="nav-headings">Direct Message</h5>
+                    <% (User.all - [current_user]).each do |user| %>
+                      <li><%= link_to user.username, direct_message_path(user.id), data: {behavior: "barroom-link", barroom_id: Barroom.direct_message_for_users([current_user, user]).id } %></li>
+                    <% end %>
+                  <% else %>
+                    <li><%= link_to "Sign Up", new_user_registration_path %></li>
+                    <li><%= link_to "Login", new_user_session_path %></li>
+                  <% end %>
+                </ul>
+              </div>
             </div>
-            <% end %>
-            <% if alert %>
-            <div class="alert alert-dismissible alert-danger">
-              <button type="button" class="close" data-dismiss="alert">×</button>
-              <h4><%= alert %></h4>
-            </div>
-            <% end %>
-            <%= yield %>
-          </div>
+          </nav>
+        </div>
+        <div class="col-sm-8 col-lg-9">
+          <!-- your page content -->
+          <%= yield %>
         </div>
       </div>
     </div>
   </body>
 </html>
+<script type="text/javascript">
+  $( document ).on('turbolinks:load', function() {
+    $('#affix-settings-nav').affix({
+      offset: {
+        top: 0
+      }
+    })
+  })
+</script>
