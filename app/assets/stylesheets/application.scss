@@ -130,6 +130,29 @@ Midnight Navy: #3D4A58
   margin-bottom: 0px;
 }
 
+#main-col {
+  padding-left: 0;
+}
+
+/* Barroom Views */
+.top-nav-fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #dfdfdf;
+  height: 86px;
+}
+
+.top-nav-fixed h2 {
+  padding-left: 20px;
+}
+
+.barroom-container {
+  margin-top: 100px;
+  padding-left: 20px;
+}
+
 @media (max-width:767px) {
   #static-sidebar {
     display: none;
