@@ -2,21 +2,21 @@
   <h2><%= @barroom.name %></h2>
 </div>
 <div class="barroom-container">
-
-<% unread_messages = false %>
-<div data-behavior='messages' data-barroom-id='<%= @barroom.id %>'>
-  <% @messages.each do |message| %>
-  <% if !unread_messages && @barroom_user.last_read_at < message.created_at && @barroom_user.user_id != message.user_id %>
-  <% unread_messages = true %>
-  <div class="strike">
-    <span>Unread Messages</span>
+  <% unread_messages = false %>
+  <div data-behavior='messages' data-barroom-id='<%= @barroom.id %>'>
+    <% @messages.each do |message| %>
+    <% if !unread_messages && @barroom_user.last_read_at < message.created_at && @barroom_user.user_id != message.user_id %>
+    <% unread_messages = true %>
+    <div class="strike">
+      <span>Unread Messages</span>
+    </div>
+    <% end %>
+    <%= render message %>
+    <% end %>
   </div>
-  <% end %>
-  <%= render message %>
-  <% end %>
 </div>
-
-<%= form_for [@barroom, Message.new] do |f| %>
-<%= f.text_area :body, rows: 1, class: "form-control", autofocus: true %>
-<% end %>
+<div class="bottom-nav-fixed">
+  <%= form_for [@barroom, Message.new] do |f| %>
+    <%= f.text_area :body, rows: 1, class: "form-control", autofocus: true %>
+  <% end %>
 </div>
