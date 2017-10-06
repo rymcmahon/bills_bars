@@ -11,7 +11,10 @@
   <body>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-1 col-lg-1" id="static-sidebar">
+        <div class="col-sm-1 col-lg-1" >
+          <div class="navbar-fixed-side">
+
+
           <ul id="affix-settings-nav">
           <li><i class="fa fa-newspaper-o" aria-hidden="true"></i></li>
             <p class="setting-nav-text">News</p>
@@ -35,6 +38,8 @@
               <p class="setting-nav-text">Log in</p>
             <% end %>
           </ul>
+
+          </div>
         </div>
         <div class="col-sm-3 col-lg-2">
           <nav class="navbar navbar-default navbar-fixed-side" id="settings-nav">
@@ -63,7 +68,24 @@
                     <% (User.all - [current_user]).each do |user| %>
                       <li><%= link_to user.username, direct_message_path(user.id), data: {behavior: "barroom-link", barroom_id: Barroom.direct_message_for_users([current_user, user]).id } %></li>
                     <% end %>
+                    <hr>
+                    <%= link_to edit_user_registration_path do %>
+                      <li class="icon-link"><i class="fa fa-user" aria-hidden="true"></i></li>
+                    <% end %>
+                    <p class="setting-nav-text">Profile</p>
+                    <%= link_to destroy_user_session_path, method: :delete do %>
+                      <li class="icon-link"><i class="fa fa-sign-out" aria-hidden="true"></i></li>
+                    <% end %>
+                    <p class="setting-nav-text">Log out</p>
                   <% else %>
+                    <%= link_to new_user_registration_path do %>
+                      <li class="icon-link"><i class="fa fa-user-plus" aria-hidden="true"></i></li>
+                    <% end %>
+                    <p class="setting-nav-text">Sign up</p>
+                    <%= link_to new_user_session_path do %>
+                      <li class="icon-link"><i class="fa fa-sign-in" aria-hidden="true"></i></li>
+                    <% end %>
+                    <p class="setting-nav-text">Log in</p>
                   <% end %>
                 </ul>
               </div>

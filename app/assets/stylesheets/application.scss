@@ -26,6 +26,11 @@ Blue: #324C7E
 Off-White: #F5F3F4
 Midnight Navy: #3D4A58
 */
+
+body {
+  margin-bottom: 100px;
+}
+
 #main-nav {
   margin-top: 50px;
 }
@@ -63,9 +68,9 @@ Midnight Navy: #3D4A58
 }
 
 #static-sidebar {
-  width: 60px;
-  padding: 10px 0 0 0;
-  background-color: #324C7E;
+    width: 60px;
+    padding: 10px 0 0 0;
+    background-color: #324C7E;
   min-height: 2000px;
 }
 
@@ -82,27 +87,23 @@ Midnight Navy: #3D4A58
   padding-left: 0;
 }
 
-#static-sidebar li {
-  list-style: none;
-  width: 60px;
-  text-align: center;
-}
-
-#static-sidebar .fa {
+.icon-link .fa {
   font-size: 25px;
   padding: 10px 0 0 0;
-  color: #fff;
+  color: #324C7E;
+  padding: 5px 15px 0 25px;
 }
 
 .setting-nav-text {
-  text-align: center;
-  color: #fff;
+  color: #324C7E;
   font-size: 12px;
+  padding: 0 15px;
 }
 
 #settings-nav {
   background-color: #F5F3F4;
-  border-color: #F5F3F4;
+  border-color: #dfdfdf;
+  border-right: 1px solid #dfdfdf;
 }
 
 #messaging-nav {
@@ -126,7 +127,7 @@ Midnight Navy: #3D4A58
 
 .nav-headings {
   padding: 0 15px;
-  color: #3D4A58;
+  color: #324C7E;
   margin-top: 20px;
   margin-bottom: 0px;
 }
@@ -165,6 +166,7 @@ Midnight Navy: #3D4A58
 .bottom-nav-fixed form {
   width: 700px;
   margin: 25px 20px;
+  overflow: hidden;
 }
 
 #message_body {
