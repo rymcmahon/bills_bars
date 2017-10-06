@@ -1,3 +1,4 @@
-<div>
-  <strong><%= message.user.username %>:</strong> <%= message.body %>
+<div class="messages-wrapper">
+  <h4><strong><%= message.user.username %></strong><%= message.created_at.strftime("%l:%M %P") %></h4>
+  <p><%= message.body %></p>
 </div>

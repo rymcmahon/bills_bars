@@ -67,11 +67,11 @@ body {
   margin-left: 15px;
 }
 
-#static-sidebar {
-    width: 60px;
-    padding: 10px 0 0 0;
-    background-color: #324C7E;
-  min-height: 2000px;
+#affix-settings-nav {
+  margin-top: 15px;
+  padding: 0;
+  text-align: center;
+  width: 100px;
 }
 
 #logo-link {
@@ -87,21 +87,25 @@ body {
   padding-left: 0;
 }
 
+.icon-link {
+  list-style: none;
+}
+
 .icon-link .fa {
   font-size: 25px;
   padding: 10px 0 0 0;
-  color: #324C7E;
-  padding: 5px 15px 0 25px;
+  color: #fff;
+  padding: 0;
 }
 
-.setting-nav-text {
-  color: #324C7E;
+.settings-nav-text {
+  color: #fff;
   font-size: 12px;
   padding: 0 15px;
 }
 
 #settings-nav {
-  background-color: #F5F3F4;
+  background-color: #324C7E;
   border-color: #dfdfdf;
   border-right: 1px solid #dfdfdf;
 }
@@ -171,6 +175,10 @@ body {
 
 #message_body {
   border: solid 2px  #324C7E;
+}
+
+.messages-wrapper {
+  margin: 15px 0;
 }
 
 @media (max-width:767px) {
