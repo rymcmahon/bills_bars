@@ -15,7 +15,7 @@
     <% end %>
   </div>
 </div>
-<div class="bottom-nav-fixed">
+<div class="bottom-nav-fixed" id="contact">
   <%= form_for [@barroom, Message.new] do |f| %>
     <%= f.text_area :body, rows: 1, class: "form-control", autofocus: true %>
   <% end %>
