@@ -54,7 +54,7 @@ body {
   top: 50%;
   width: 9999px;
   height: 1px;
-  background: red;
+  background: #C1404C;
 }
 
 .strike > span:before {
@@ -171,6 +171,11 @@ body {
   width: 700px;
   margin: 25px 20px;
   overflow: hidden;
+}
+
+#msg-container {
+  height: 420px;
+  overflow: auto;
 }
 
 #message_body {
