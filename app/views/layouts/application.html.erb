@@ -61,6 +61,10 @@
                       <li><%= link_to barroom.name, barroom, data: {behavior: "barroom-link", barroom_id: barroom.id} %></li>
                     <% end %>
                     <hr>
+                    <!-- 1. Iterate through @barrooms
+                    2. Grab barroom.id and current_user.id
+                    3. Pass barroom.id and current_user.id into a where clause that looks for matches on BarroomUsers table -->
+                    <hr>
                     <h5 class="nav-headings">Direct Message</h5>
                     <% (User.all - [current_user]).each do |user| %>
                       <li><%= link_to user.username, direct_message_path(user.id), data: {behavior: "barroom-link", barroom_id: Barroom.direct_message_for_users([current_user, user]).id } %></li>
