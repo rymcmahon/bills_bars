@@ -194,6 +194,39 @@ body {
   display: inline;
 }
 
+.barroom-link a {
+  display: inline-block !important;
+}
+
+.leave-icon-wrapper {
+  display: inline;
+  float: right;
+  margin-right: 10px;
+}
+
+.leave-icon-wrapper .fa-minus-circle {
+  color: #C1404C;
+}
+
+.join-icon-wrapper {
+  display: inline;
+  float: right;
+  margin-right: 10px;
+}
+
+.join-icon-wrapper .fa-plus-circle {
+  color: #324C7E;
+}
+
+#join-huddle-heading {
+  margin-bottom: 5px;
+}
+
+#join-barroom-label {
+  color: #777;
+  padding-left: 15px;
+}
+
 @media (max-width:767px) {
   #static-sidebar {
     display: none;

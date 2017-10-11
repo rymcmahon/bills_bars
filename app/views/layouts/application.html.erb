@@ -58,15 +58,28 @@
                     </li>
                     <h5 class="nav-headings">Huddles</h5>
                     <% current_user.barrooms.public_channels.each do |barroom| %>
-                      <li><%= link_to barroom.name, barroom, data: {behavior: "barroom-link", barroom_id: barroom.id} %></li>
-                      <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                      <li class="barroom-link">
+                        <%= link_to barroom.name, barroom, data: {behavior: "barroom-link", barroom_id: barroom.id} %>
+                        <div class="leave-icon-wrapper">
+                          <%= link_to barroom_barroom_users_path(barroom), method: :delete do %>
+                            <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                          <% end %>
+                        </div>
+                      </li>
                     <% end %>
                     <hr>
-                    <h5 class="nav-headings">Join a Huddle</h5>
+                    <h5 class="nav-headings" id="join-huddle-heading">Join a Huddle</h5>
                     <% @barrooms.each do |barroom| %>
                       <% joined = BarroomUser.where("user_id = ? AND barroom_id = ?", current_user.id, barroom.id) %>
                       <% if joined.empty? %>
-                        <li><%= link_to barroom.name, barroom_barroom_users_path(barroom), method: :post %></li>
+                        <li class="barroom-link">
+                          <span id="join-barroom-label"><%= barroom.name %></span>
+                          <div class="join-icon-wrapper">
+                            <%= link_to barroom_barroom_users_path(barroom), method: :post do %>
+                              <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                            <% end %>
+                          </div>
+                        </li>
                       <% end %>
                     <% end %>
                     <hr>
