@@ -2,6 +2,7 @@ class DirectMessagesController < ApplicationController
   before_action :authenticate_user!
 
   def show
+    @barrooms = Barroom.all
     users = [current_user, User.find(params[:id])]
     @barroom = Barroom.direct_message_for_users(users)
     @messages = @barroom.messages.order(created_at: :desc).limit(100).reverse

@@ -8,6 +8,7 @@ class BarroomsController < ApplicationController
   def show
     @messages = @barroom.messages.order(created_at: :desc).limit(100).reverse
     @barroom_user = current_user.barroom_users.find_by(barroom_id: @barroom.id)
+    @barrooms = Barroom.all
   end
 
   def new
