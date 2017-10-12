@@ -20,4 +20,9 @@ class Barroom < ApplicationRecord
       barroom
     end
   end
+
+  def self.unjoined_room(user, barroom)
+    BarroomUser.where("user_id = ? AND barroom_id = ?", user, barroom)
+  end
+
 end

@@ -70,7 +70,7 @@
                     <hr>
                     <h5 class="nav-headings" id="join-huddle-heading">Join a Huddle</h5>
                     <% @barrooms.each do |barroom| %>
-                      <% joined = BarroomUser.where("user_id = ? AND barroom_id = ?", current_user.id, barroom.id) %>
+                      <% joined = Barroom.unjoined_room(current_user.id, barroom.id) %>
                       <% if joined.empty? %>
                         <li class="barroom-link">
                           <span id="join-barroom-label"><%= barroom.name %></span>
