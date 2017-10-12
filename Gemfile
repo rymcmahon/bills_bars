@@ -54,3 +54,4 @@ gem 'bootstrap-sass'
 gem 'devise', '~> 4.2'
 gem 'jquery-rails'
 gem "font-awesome-rails"
+gem "feedjira"
