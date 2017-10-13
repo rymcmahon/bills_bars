@@ -1,10 +1,14 @@
-<div class="container">
-  <div class="col-md-12">
+<div class="container-fluid">
+  <div class="col-md-12 col-lg-12">
+    <figure>
+      <%= image_tag "wordmark.png", class:"img-responsive", id:"wordmark-news" %>
+      <figcaption id="news-wordmark-caption" class="text-center">News From Around The Web</figcaption>
+    </figure>
     <% @entries.each do |entry| %>
-      <p><%= link_to "#{entry.title.sanitize!}", "#{entry.url}" %> </p>
-      <p><%= entry.published.strftime("%B %d, %Y") %> </p>
-      <p><%= entry.author %> </p>
-      <p><%= entry.content %> </p>
+      <h4><%= link_to "#{strip_tags(entry.title.sanitize!)}", "#{entry.url}", target: :_blank %></h4>
+      <!-- <p><%= entry.published.strftime("%B %d, %Y") %> </p> -->
+      <p><%= strip_tags(entry.content.sanitize!) %></p>
+      <hr>
     <%  end %>
   </div>
 </div>
