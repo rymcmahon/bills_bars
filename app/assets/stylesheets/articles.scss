@@ -1,0 +1,54 @@
+// Place all the styles related to the Articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+Palette
+Red: #C1404C
+Blue: #324C7E
+Off-White: #F5F3F4
+Midnight Navy: #3D4A58
+*/
+
+#wordmark-news {
+  width: 34%;
+  margin: 15px auto 0;
+}
+
+#news-wordmark-caption {
+  color: #C1404C;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-family: 'Ultra', serif;
+  letter-spacing: 1px;
+}
+
+#news-wordmark-figure {
+  margin-bottom: 60px;
+}
+
+#article-title-link {
+  color: #C1404C;
+  font-weight: 700;
+}
+
+#article-link-header {
+  margin-bottom: 0;
+}
+
+#article-published {
+  color: #324C7E;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+#article-description {
+  color: #131516;
+  font-size: 15px;
+}
+
+.entries-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
