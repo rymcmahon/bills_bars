@@ -11,17 +11,44 @@ Midnight Navy: #3D4A58
 */
 
 #wordmark-news {
-  width: 50%;
-  margin: 20px auto 0;
+  width: 34%;
+  margin: 15px auto 0;
 }
 
 #news-wordmark-caption {
   color: #C1404C;
   text-transform: uppercase;
-  font-size: 22px;
+  font-size: 15px;
   font-family: 'Ultra', serif;
+  letter-spacing: 1px;
 }
 
 #news-wordmark-figure {
   margin-bottom: 60px;
+}
+
+#article-title-link {
+  color: #C1404C;
+  font-weight: 700;
+}
+
+#article-link-header {
+  margin-bottom: 0;
+}
+
+#article-published {
+  color: #324C7E;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+#article-description {
+  color: #131516;
+  font-size: 15px;
+}
+
+.entries-wrapper {
+  width: 90%;
+  margin: 0 auto;
 }
