@@ -52,3 +52,37 @@ Midnight Navy: #3D4A58
   width: 90%;
   margin: 0 auto;
 }
+
+.day-strike {
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.day-strike > span {
+  position: relative;
+  display: inline-block;
+  color: #324C7E;
+  text-transform: uppercase;
+}
+
+.day-strike > span:before,
+.day-strike > span:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 9999px;
+  height: 1px;
+  background: #324C7E;
+}
+
+.day-strike > span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+
+.day-strike > span:after {
+  left: 100%;
+  margin-left: 15px;
+}
