@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
   def day
-    self.created_at.strftime('%B %d, %Y')
+    self.published_at.strftime('%B %d, %Y')
   end
 end
