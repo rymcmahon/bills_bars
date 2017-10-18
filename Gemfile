@@ -55,3 +55,4 @@ gem 'devise', '~> 4.2'
 gem 'jquery-rails'
 gem "font-awesome-rails"
 gem "feedjira"
+gem 'will_paginate', '~> 3.1.0'
