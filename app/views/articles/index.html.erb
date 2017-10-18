@@ -12,7 +12,7 @@
           <% else %>
             <h6><div class='day-strike'><span><%= day %></span></div></h6>
           <% end %>
-          <% @articles.each do |article| %>
+          <% articles.each do |article| %>
             <h4 id="article-link-header"><%= link_to "#{strip_tags(article.title.sanitize!)}", "#{article.url}", target: :_blank, id:"article-title-link" %></h4>
             <p id="article-published">Published <%= time_ago_in_words(article.published_at) %> ago.</p>
             <p id="article-description"><%= strip_tags(article.content.sanitize!) %></p>
