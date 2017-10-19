@@ -56,3 +56,6 @@ gem 'jquery-rails'
 gem "font-awesome-rails"
 gem "feedjira"
 gem 'will_paginate', '~> 3.1.0'
+gem "paperclip", "~> 5.0.0"
+gem "figaro"
+gem 'aws-sdk'
