@@ -1,6 +1,12 @@
 <div class="messages-wrapper">
-  <%= image_tag message.user.avatar.url(:medium), id:"message-avatar" %>
-  <h5><strong><%= message.user.username %></strong></h5>
-  <h6><em><%= message.created_at.strftime("%b %e %l:%M %P") %></em></h6>
-  <p><%= message.body %></p>
+  <div class="row">
+    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 avatar-col">
+    <%= image_tag message.user.avatar.url(:medium), id:"message-avatar", class %>
+  </div>
+  <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 message-col">
+    <h5><strong><%= message.user.username %></strong></h5>
+    <h6><em><%= message.created_at.strftime("%b %e %l:%M %P") %></em></h6>
+    <p><%= message.body %></p>
+  </div>
+</div>
 </div>
