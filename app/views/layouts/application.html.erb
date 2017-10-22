@@ -15,8 +15,6 @@
         <div class="col-sm-1 col-lg-1" >
           <div class="navbar-fixed-side" id="settings-nav">
           <ul id="affix-settings-nav">
-          <li class="icon-link"><i class="fa fa-newspaper-o" aria-hidden="true"></i></li>
-            <p class="settings-nav-text">News</p>
             <% if user_signed_in? %>
               <%= link_to edit_user_registration_path do %>
                 <li class="icon-link"><i class="fa fa-user" aria-hidden="true"></i></li>
@@ -36,6 +34,10 @@
               <% end %>
               <p class="settings-nav-text">Log in</p>
             <% end %>
+            <%= link_to articles_path do %>
+              <li class="icon-link"><i class="fa fa-newspaper-o" aria-hidden="true"></i></li>
+            <% end %>
+            <p class="settings-nav-text">News</p>
           </ul>
           </div>
         </div>

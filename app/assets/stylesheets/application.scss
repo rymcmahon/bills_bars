@@ -129,7 +129,7 @@ body {
 }
 
 #messaging-nav .navbar-nav > li > a:hover {
-  background-color: #F8F8F8;
+  background-color: #F5F3F4;
   color: #3D4A58;
   text-decoration: underline;
 }
@@ -158,6 +158,7 @@ body {
   background-color: #fff;
   border-bottom: 1px solid #dfdfdf;
   height: 86px;
+  z-index: 99999;
 }
 
 .top-nav-fixed h2 {
@@ -203,6 +204,20 @@ body {
 
 .messages-wrapper h6 {
   display: inline;
+}
+
+#message-avatar {
+  width: 50px;
+  height: 50px;
+}
+
+.has-avatar {
+  border: 1px solid #dfdfdf;
+  border-radius: 50%;
+}
+
+.message-col {
+  padding: 8px 5px;
 }
 
 .barroom-link a {
