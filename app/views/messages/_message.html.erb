@@ -1,7 +1,7 @@
 <div class="messages-wrapper">
   <div class="row">
     <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 avatar-col">
-    <%= image_tag message.user.avatar.url(:medium), id:"message-avatar" %>
+    <%= image_tag message.user.avatar.url(:medium), id:"message-avatar", class:"#{ 'has-avatar' if message.user.avatar_file_name != nil }"%>
   </div>
   <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 message-col">
     <h5><strong><%= message.user.username %></strong></h5>
