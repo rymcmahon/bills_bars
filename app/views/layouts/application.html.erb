@@ -92,6 +92,15 @@
                     <% end %>
                   <% else %>
                   <% end %>
+                  <%= form_tag user_session_path, method: :get do %>
+                    <%= text_field_tag 'username', params[:username], placeholder: "Enter user's name" %>
+                    <%= submit_tag 'Search' %>
+                  <% end %>
+                  <% if @users %>
+                  <% @users.each do |user| %>
+                  <%= user.name %>
+                  <% end %>
+                  <% end %>
                 </ul>
               </div>
             </div>

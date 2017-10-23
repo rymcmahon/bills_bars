@@ -11,4 +11,7 @@ class User < ApplicationRecord
   has_attached_file :avatar, styles: { medium: "50x50>" }, default_url: "fallback-avatar.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
+  include PgSearch
+
+  pg_search_scope :search_for, :against => [:username]
 end
