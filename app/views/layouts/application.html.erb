@@ -92,6 +92,11 @@
                     <% end %>
                   <% else %>
                   <% end %>
+                  <h5 class="nav-headings">Users Online</h5>
+                  <% @online_user = User.online %>
+                  <% @online_user.each do |online_user| %>
+                    <li><a><%= online_user.username %></a></li>
+                  <% end %>
                 </ul>
               </div>
             </div>
